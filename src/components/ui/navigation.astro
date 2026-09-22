@@ -8,7 +8,7 @@ import ContentWidthWrapper from "./content-width-wrapper.astro";
 
 <header id="header" class="bg-white sticky top-0 left-0 w-full">
     <ContentWidthWrapper>
-        <div>
+        <div class="xl:flex xl:justify-between xl:items-center">
             <div id="header_top" class="px-5 py-6 flex items-center justify-between relative z-10">
                 <div>
                     <svg id="header_logo" width="148" height="25" xmlns="http://www.w3.org/2000/svg"
@@ -28,28 +28,28 @@ import ContentWidthWrapper from "./content-width-wrapper.astro";
                     aria-controls="navigation"
                     aria-expanded="false"
                     aria-label="Toggle main navigation"
-                    class="w-10 h-10 flex flex-col gap-1 justify-center items-center p-2.5 overflow-hidden"
+                    class="w-10 h-10 flex flex-col gap-1 justify-center items-center p-2.5 overflow-hidden xl:hidden"
                 >
                     <span class="first w-full h-0.75 bg-blue-950 block"></span>
                     <span class="second w-full h-0.75 bg-blue-950 block"></span><span class="last w-full h-0.75 bg-blue-950 block"></span>
                 </button>
             </div>
 
-            <nav id="navigation" aria-label="Main navigation" class="absolute h-dvh w-full bg-blue-950/90 top-0 left-0 hidden">
-                <div class="flex flex-col justify-between h-full pt-26 px-6 pb-8">
-                    <div class="flex flex-col gap-6">
-                        <ul class="border-t border-blue-50/10">
+            <nav id="navigation" aria-label="Main navigation" class="absolute h-dvh w-full bg-blue-950/90 top-0 left-0 hidden xl:block xl:static xl:h-max xl:w-max xl:bg-transparent">
+                <div class="flex flex-col justify-between h-full pt-26 px-6 pb-8 xl:flex-row xl:p-0">
+                    <div class="flex flex-col gap-6 xl:flex-row xl:items-center xl:gap-12">
+                        <ul class="border-t border-blue-50/10 flex flex-col xl:flex-row xl:items-center xl:gap-12">
                             {["Features", "Pricing", "Contact"].map(item => (
-                              <li data-navigation-item class="p-5 uppercase text-xl tracking-widest border-b border-blue-50/10 text-center text-gray-50">
+                              <li data-navigation-item class="p-5 uppercase text-xl tracking-widest border-b border-blue-50/10 text-center text-gray-50 hover:text-gray-100 xl:text-blue-950 transition-colors xl:p-0 xl:border-none xl:text-base cursor-pointer xl:hover:text-red-400">
                                   {item}
                               </li>
                             ))}
                         </ul>
 
-                        <a data-navigation-item class="text-xl text-center block p-2 px-4 w-full rounded-md border-2 border-gray-50 text-gray-50 uppercase tracking-widest">Login</a>
+                        <a data-navigation-item class="text-xl text-center block p-2 px-8 w-full rounded-md border-2 border-gray-50 text-gray-50 uppercase tracking-widest xl:border-red-400 xl:text-red-400 transition-all xl:text-base xl:hover:shadow-lg cursor-pointer">Login</a>
                     </div>
 
-                    <ul class="flex items-center gap-10 mx-auto">
+                    <ul class="flex items-center gap-10 mx-auto xl:hidden">
                         <li>
                             <a href="" data-navigation-item>
                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
