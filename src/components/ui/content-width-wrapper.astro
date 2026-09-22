@@ -1,3 +1,12 @@
-<div class="w-full max-w-6xl 2xl:max-w-7xl">
+---
+import {cn} from '@/libs/utils'
+import {type HTMLProps} from 'astro/types'
+
+interface Props extends HTMLProps<'div'> {}
+
+const {class: className} = Astro.props;
+---
+
+<div class={cn("w-full max-w-6xl 2xl:max-w-7xl mx-auto", className)}>
     <slot />
 </div>
