@@ -1,0 +1,22 @@
+---
+import { type HTMLAttributes } from "astro/types";
+import { cn } from "@/libs/utils";
+
+interface Props extends HTMLAttributes<"a"> {
+    variant: "primary" | "secondary";
+}
+
+const { variant, href, class: className, ...rest } = Astro.props;
+---
+
+<a
+    {...rest}
+    href={href}
+    class={cn(
+        "p-3 px-4 rounded-md shadow-md bg-blue-600 text-white shadow-blue-600/20 font-medium outline-[1.5px] outline-blue-600/0 hover:outline-blue-600 transition-all hover:text-blue-600 hover:bg-white active:opacity-90 text-nowrap",
+        variant === "secondary" && "bg-gray-100 text-gray-600 hover:text-gray-600 hover:outline-gray-600 shadow-gray-600/10",
+        className,
+    )}
+>
+    <slot />
+</a>
